@@ -23,7 +23,6 @@
 
     a:hover {
         background-color: var(--bella-secondary);
-
     }
     
     section {
