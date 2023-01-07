@@ -7,8 +7,8 @@
 </svelte:head>
 
 <section>
-    <h1>Bella Secrets</h1>
-    <a href="/inventory">View inventory</a>
+    <h1 class="bella">Bella Secrets</h1>
+    <a href="/inventory">View Inventory</a>
 </section>
 
 <style>
@@ -22,18 +22,20 @@
     }
 
     a:hover {
-        background-color: var(--bella-secondary);
+        background-color: var(--bella-secondary2);
     }
     
     section {
         margin-top: 20%;
         text-align: center;
     }
+
+    h1.bella {
+    color: white;
+    font-family: 'Allura', cursive;
+    font-size: 80px;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
     
-    h1 {
-        color: var(--bella-secondary);
-        font-family: 'Allura', cursive;
-        font-size: 80px;
-        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-    }
+    
 </style>
