@@ -1,17 +1,14 @@
 <script lang="ts">
     import type { Products } from './+page.server'
-    export let data: Products[] = [
-    {
-      id: 'oMYlGzX6ZvBYt0WFtzDk',
-      Brand: 'Bath & Body Works',
-      Image_Name: '20230104_145611.webp',
-      Product_Name: 'Cucumber Melon',
-      Product_Type: 'Gentle Foaming Hand Soap',
-      Quantity: 1
-    }
-  ];
+    import type { K, T } from 'vitest/dist/types-71ccd11d';
 
-    console.log(data)
+    export let data = {"data": []};
+
+    console.log("data",data);
+
+    //const products: Products[] = data["data"];
+
+
 </script>
 
 <style>
@@ -26,3 +23,12 @@
 
 <h1><a class="bella" href="/">Bella Secrets</a></h1>
 <h2>Inventory</h2>
+
+<!-- load 20 items at a time -->
+<div class="inventory">
+  <div class="item">
+    <img src="" alt="">
+    <div class="name"></div>
+    <div class="price"></div>
+  </div>
+</div>

@@ -23,6 +23,7 @@
 
     a:hover {
         background-color: var(--bella-secondary2);
+        border: var(--bella-secondary2);
     }
     
     section {
@@ -35,6 +36,8 @@
     font-family: 'Allura', cursive;
     font-size: 80px;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    padding-left: 5px;
+    padding-right: 5px;
 }
     
     

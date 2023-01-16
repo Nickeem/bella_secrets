@@ -1,3 +1,93 @@
+import PocketBase, { ListResult } from 'pocketbase';
+import type { K, T } from 'vitest/dist/types-71ccd11d';
+
+const pb = new PocketBase('http://45.33.79.208');
+
+// interface for firestore collection
+export interface Products {
+  id: string,
+  brand: string,
+  collectionName: 'products',
+  name: string,
+  type: string,
+  quantity: number,
+  price: number,
+  product_preview: string,
+  [key:string]: any
+}
+
+let resultList;
+let data: Products[];
+
+// fetch a paginated records list
+try {
+  let resultList = await pb.collection('products').getList(1, 20
+    //, {filter: 'created >= "2022-01-01 00:00:00" && someField1 != someField2', }
+  );
+  data = JSON.parse(JSON.stringify(resultList.items));
+} catch (error) {
+  console.log(error)
+  data = []
+}
+
+
+export const load = () => {
+  if (data.length) {
+    return {data}
+  }
+  else {
+    data = [{
+      brand: "Victoria's Secret",
+      collectionId: 'r53d0hpywnae3si',
+      collectionName: 'products',
+      created: '2023-01-14 00:53:58.128Z',
+      id: '68qcfnybf0i6j4v',
+      name: 'Cherry Elxir',
+      price: 25,
+      product_preview: 'cherry_elixir.jpg',
+      quantity: 1,
+      type: 'Body Spray',
+      updated: '2023-01-14 01:15:33.058Z',
+      expand: {}
+    },
+    {
+      brand: 'Bath & Body Works',
+      collectionId: 'r53d0hpywnae3si',
+      collectionName: 'products',
+      created: '2023-01-14 01:42:10.415Z',
+      id: '2div01o20nstm3v',
+      name: 'Pink Pineapple Sunrise',
+      price: 20,
+      product_preview: 'pink_pineapple_sunrise.jpg',
+      quantity: 3,
+      type: 'Hand Soap',
+      updated: '2023-01-14 01:42:10.415Z',
+      expand: {}
+    }];
+    return {data};
+  }
+  
+}
+
+// console.log(resultList.items);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
@@ -19,20 +109,11 @@ const firebaseConfig = {
   measurementId: "G-F4Z84H21J5"
 };
 
-// interface for firestore collection
-export interface Products {
-  id: string,
-  Brand: string,
-  Image_Name: string,
-  Product_Name: string,
-  Product_Type: string,
-  Quantity: number,
-  [key:string]: any
-}
+
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-/*const analytics = getAnalytics(app);*/
+// const analytics = getAnalytics(app);
 
 // code doesn't need to be executed duaring testing phase
 
@@ -62,5 +143,4 @@ collectionSnapshot.forEach((doc) => {
     })
 })
 
-export const load = () => {return {data}}
-//
+ */
