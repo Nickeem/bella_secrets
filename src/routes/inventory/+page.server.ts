@@ -14,7 +14,11 @@ export interface Products {
   price: number,
   product_preview: string,
   [key:string]: any
-}
+};
+
+export interface Products_array extends Array<Products>{};
+
+export interface payload {"data": Products_array};
 
 let resultList;
 let data: Products[];
